@@ -1,0 +1,22 @@
+#                                                                                           
+# .csv to store UE's information in HSS                                                     
+# Kept in the following format: "Name,Auth,IMSI,Key,OP_Type,OP/OPc,AMF,SQN,QCI,IP_alloc"  
+#                                                                                           
+# Name:     Human readable name to help distinguish UE's. Ignored by the HSS                
+# Auth:     Authentication algorithm used by the UE. Valid algorithms are XOR               
+#           (xor) and MILENAGE (mil)                                                        
+# IMSI:     UE's IMSI value                                                                 
+# Key:      UE's key, where other keys are derived from. Stored in hexadecimal              
+# OP_Type:  Operator's code type, either OP or OPc                                          
+# OP/OPc:   Operator Code/Cyphered Operator Code, stored in hexadecimal                     
+# AMF:      Authentication management field, stored in hexadecimal                          
+# SQN:      UE's Sequence number for freshness of the authentication                        
+# QCI:      QoS Class Identifier for the UE's default bearer.                               
+# IP_alloc: IP allocation stratagy for the SPGW.                                            
+#           With 'dynamic' the SPGW will automatically allocate IPs                         
+#           With a valid IPv4 (e.g. '172.16.0.2') the UE will have a statically assigned IP.
+#                                                                                           
+# Note: Lines starting by '#' are ignored and will be overwritten                           
+ue2,mil,001010123456789,6874736969202073796d4b2079651a73,opc,504f20634f6320504f50206363501a4f,9000,000000000c22,9,dynamic
+ue3,mil,001010987651234,6874736969202073796d4b2079652a73,opc,504f20634f6320504f50206363502a4f,9000,000000000660,9,dynamic
+ue1,mil,001010987654321,6874736969202073796d4b2079650a73,opc,504f20634f6320504f50206363500a4f,9000,00000000187e,9,dynamic
